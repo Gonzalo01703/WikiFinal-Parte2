@@ -6,6 +6,7 @@ use DBI;
 
 my $q=CGI->new;
 print $q -> header('text/xml');
+
 my $userName=$q->param("userName");
 my $password=$q->param("password");
 my $lastName=$q->param("lastName");
@@ -14,18 +15,22 @@ my $firstName=$q->param("firstName");
     
 #register($userName,$password,$firstName,$lastName);
 
-if(defined($userName) and defined($password) and defined($firstName) and defined($lastName)){
+if(defined($userName$firstName) and defined($password) and defined($firstName) and defined($lastName)){
     if(!checkUserName($userName)){
         register($userName,$password,$firstName,$lastName);
+        print "c";
         successRegister($userName,$firstName,$lastName);
     }
     else{
+        print "b";
         showRegister();
     }
 }
 else{
+    print "a";
     showRegister();
 }
+
 
   sub checkUserName{
     my $userNameQuery=$_[0];
@@ -33,7 +38,7 @@ else{
     my $user1 = 'alumno';
     my $password1= 'pweb1';
     my $dsn ='DBI:MariaDB:database=pweb1;host=192.168.1.9';
-    my $dbh = DBI ->connect($dsn,$user1,$password1) or die ("No se pudo conectar");
+    my $dbh = DBI ->connect($dsn,$user,$password1) or die ("No se pudo conectar");
     
     
     my $sql = "SELECT userName FROM Users WHERE userName=?";
@@ -49,33 +54,37 @@ sub successRegister{
     my $owner= $_[0];
     my $firstNameQuery1= $_[1];
     my $lastNameQuery1 = $_[2];
-    my $body=<<XML;
+
+    my $body=<XML;
+
     <user>
         <owner>$owner</owner>
-        <firstName>$firstNameQuery1</firstName>
+        <firstName>$firsNameQuery1</firstName>
         <lastName>$lastNameQuery1</lastName>
     </user>
-XML
+    XML
         print(renderBody($body));
+
 }
-
-
-sub showRegister{            
-    my $body=<<XML;
+sub showRegister{
+    my $body=<XML;
     <user>
     </user>
-XML
-        print(renderBody($body));
+    XML
+    print(renderBody($body));
 }
 
 sub renderBody{
     my $body=$_[0];
-    my $xml=<<XML;
-<?xml version="1.0" encoding="UTF-8"?>
-$body
-XML
+    my $xml=<XML;
+    <?xml version="1.0" encoding="UTF-8"?>
+    $body
+    XML
     return $xml;
 }
+
+
+
 
 sub register{
 
@@ -86,17 +95,17 @@ sub register{
 
 
     my $user = 'alumno';
-    my $password= 'pweb1';
+    my $password1= 'pweb1';
     my $dsn ='DBI:MariaDB:database=pweb1;host=192.168.1.9';
-    my $dbh = DBI ->connect($dsn,$user,$password) or die ("No se pudo conectar");
+    my $dbh = DBI ->connect($dsn,$user,$password1) or die ("No se pudo conectar");
 
 
-    my $sth=$dbh->prepare("INSERT INTO Users(userName,password,lastName,firstName) VALUES (?,?,?,?)");
+    my $sth=$dbh->prepare("INSERT INTO Actor(userName,password,firstName,lastName) VALUES (?,?,?,?)");
 
 
     #my $sql = "INSERT INTO Users(userName,password,firstName,lastName) VALUES(?,?,?,?)";
     #my $sth=$dbh->prepare($sql);
-    $sth->execute($userNameQuery,$passwordQuery,$lastNameQuery,$firstNameQuery);
+    $sth->execute($userNameQuery,$passwordQuery,$firstNameQuery,$lastNameQuery);
     $sth ->finish;
     $dbh->disconnect;
 
