@@ -15,7 +15,7 @@ li a {
     
 }
 nav{ 
-    background-color: hsl(221, 59%, 47%);
+    background: #24303c;
     padding: 1.5em;
 }
 
@@ -23,7 +23,7 @@ nav{
     color: white;
     font-size: 20px;
     text-align: center ;
-    background-color: hsl(221, 59%, 47%);
+    background-color: #24303c;
     padding: 1.5em;
 }
 .imagenwiki{
