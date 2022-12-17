@@ -4,28 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="estiloUniversal.css">
     <title>Registrate</title>
 </head>
 <body>
-    <form action="cgi-bin/register.pl" method="post">
-        <h1>Registrate</h1>
 
-        <h2>Usuario</h2>
-        <input type="text" name="userName">
-        <h2>Contraseña</h2>
-        <input type="password" name="password">
-        <h2>Apellido</h2>
-        <input type="text" name="lastName">
-        <h2>Nombre</h2>
-        <input type="text" name="firstName">
-        
-        
-        <input type="submit" value="Registrate">
+    <nav>
+        <ul>
+		
+			<li><a href="#">Inicio</a></li>
+            <li><a href="register.html">Registrarse</a></li>
+            <li><a href="login.html">Logearse</a></li>
+            <li><a href="#">Nuevo Articulo</a></li>
+            <li><a href="imagenes.html">Ver Articulo</a></li>
+            <li><a href="avanzada.html">Ver Pagina</a></li>
+            <li><a href="#">Editar Articulo</a></li>
+            <li><a href="imagenes.html">Lista</a></li>
+            <li><a href="imagenes.html">Eliminar</a></li>
+
+        </ul>     
+    </nav>
+
+    <form action="cgi-bin/register.pl" method="post">
+        <section class="registro" style="text-align: center">
+            <h4>REGISTRATE</h4>
+
+            <input class="control" type="text" name="userName" placeholder="Ingrese Usuario">
+            <input class="control" type="password" name="password" placeholder="Ingrese Contraseña">
+            <input class="control" type="text" name="firstName" placeholder="Ingrese Nombre">
+            <input class="control" type="text" name="lastName" placeholder="Ingrese Apellido">
+            
+            
+            
+            <input  class="boton" type="submit" value="Registrate">
+            <a href="inicio.html">Regresar</a>
+
+        </section>
 
     </form>
-    <a href="inicio.html">Regresar al inicio</a>
-
+    
 
 
 
