@@ -27,7 +27,7 @@ else{
     showRegister();
 }
 
-  sub checkUserName{
+sub checkUserName{
     my $userNameQuery=$_[0];
     
     my $user1 = 'alumno';
