@@ -1,38 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estiloUniversal.css">
-    <title>INICIAR SECION</title>
+    <title>LISTA</title>
 </head>
 <body>
+
     <nav>
         <ul>
 			<li><a href="inicio.html">Inicio</a></li>
             <li><a href="register.html">Registrarse</a></li>
-            <li><a href="#">Logearse</a></li>
+            <li><a href="login.html">Logearse</a></li>
             <li><a href="new.html">Nuevo Articulo</a></li>
             <li><a href="articles.html">Ver Articulo</a></li>
             <li><a href="view.html">Ver Pagina</a></li>
             <li><a href="update.html">Editar Articulo</a></li>
-            <li><a href="list.html">Lista</a></li>
+            <li><a href="#">Lista</a></li>
             <li><a href="delete.html">Eliminar</a></li>
         </ul>     
     </nav>
-    
-    <form action="cgi-bin/login.pl" method="post">
+
+    <form action="cgi-bin/register.pl" method="post">
         <section class="registro" style="text-align: center">
-            <h4>INICIAR SESION</h4>
-            <input class="control" type="text" name="usuario" placeholder="Ingrese Usuario">
-            <input class="control" type="password" name="contraseña" placeholder="Ingrese Contraseña">
-            <input class="boton" type="submit" value="Iniciar Secion">
-            <a href="inicio.html">Regresar</a>
+            <h4>LISTA</h4>
+                    <input class="control" type="text" name="propietario" placeholder="Ingrese Propietario">
+                    
+                    <input  class="boton" type="submit" value="Buscar">
+                    <a href="inicio.html">Regresar</a>
+                
+                    
         </section>
-        
+
     </form>
-       
-    
 </body>
 </html>

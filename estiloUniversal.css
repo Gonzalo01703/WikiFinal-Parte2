@@ -2,13 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'calibri';
 }
 body{
     
     background-size: 100% 100%;
     background-attachment: fixed;
     background-image: url(fondo.jpg);
-    
+    font-family: 'calibri';
 	
 
 }
@@ -35,11 +36,11 @@ body{
 .control{
     width: 100%;
     background:  #24303c; 
-    padding: 14px;
+    padding: 12px;
     border-radius: 15px;
     margin-bottom: 15px;
     border: 1px solid hwb(220 93% 4%);
-    font-family: 'calibri';
+    
     font-size: 20px;
     color: white;
 }
@@ -51,9 +52,6 @@ body{
     color: white;
     font-size: 20px
     
-    
-    
-    
 }
 
 a {
@@ -62,7 +60,7 @@ a {
     background: hwb(223 4% 86%);
     padding: 12px;
     color: white;
-    font-size: 21px;
+    font-size: 20px;
     
 }
 ul, li { 
