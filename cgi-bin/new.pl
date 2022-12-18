@@ -11,7 +11,6 @@ my $title=$q->param("title");
 my $owner=$q->param("owner");
 my $text=$q->param("text");
 
-    
 
 if(defined($title) and defined($owner) and defined($text)){
     if(checkOwner($owner)){
@@ -38,7 +37,7 @@ sub checkOwner{
     my $user = 'alumno';
     my $password= 'pweb1';
     my $dsn ='DBI:MariaDB:database=pweb1;host=192.168.1.9';
-    my $dbh = DBI ->connect($dsn,$user,$password) or die ("No se pudo conectar");
+    my $dbh = DBI->connect($dsn,$user,$password) or die ("No se pudo conectar");
     
     
     my $sth=$dbh->prepare("SELECT userName FROM Users WHERE userName=?");
@@ -52,8 +51,9 @@ sub checkOwner{
 
 sub checkTitle{
     my $titleQuery=$_[0];
-    my $ownerQuery=$_[1]
+    my $ownerQuery=$_[1];
     
+
     my $user = 'alumno';
     my $password= 'pweb1';
     my $dsn ='DBI:MariaDB:database=pweb1;host=192.168.1.9';
@@ -78,10 +78,14 @@ sub register{
     my $password= 'pweb1';
     my $dsn ='DBI:MariaDB:database=pweb1;host=192.168.1.9';
     my $dbh = DBI ->connect($dsn,$user,$password) or die ("No se pudo conectar");
+    #Prueba para ver si se efecuta, por fin me salio despues de 5 horas pipipi
+    #my $sth=$dbh->prepare("INSERT INTO Articles(title,owner,text) VALUES(?,?,?)");
+    #$sth->execute("odio","pepe","la vaca dice ohhh");
+
     
     
-    my $sth=$dbh->prepare("INSERT INTO Articles (title,owner,text) VALUES(?,?,?)");
-    $sth->execute($titleQuery,$ownerQuery,$textQuery) or die "error";
+    my $sth=$dbh->prepare("INSERT INTO Articles(title,owner,text) VALUES(?,?,?)");
+    $sth->execute($titleQuery,$ownerQuery,$textQuery);
     my @row=$sth->fetchrow_array;
     $sth->finish;
     $dbh->disconnect;
@@ -119,3 +123,7 @@ $body
 XML
     return $xml;
 }
+    
+
+    
+
