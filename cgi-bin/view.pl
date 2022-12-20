@@ -18,12 +18,14 @@ print <<HTML;
 HTML
 
 my $q=CGI->new;
-print $q -> header('html');
+#print $q -> header('html');
 my $owner=$q->param("owner");
 my $title=$q->param("title");
 my $expresionRegular;
 
-my $contenido=renderText($owner,$title);
+    
+
+my $contenido=" ".renderText($owner,$title)." ";
 
 
 
