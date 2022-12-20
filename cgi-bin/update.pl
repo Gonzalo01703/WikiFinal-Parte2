@@ -3,18 +3,6 @@ use strict;
 use warnings;
 use CGI;
 use DBI;
-print "Content-type: text/html\n\n";
-print <<HTML;
-<!DOCTYPE html>
-<html>
-<head>
-    
-    <link rel="stylesheet" type="text/css" href="../estilosPerl124.css">
-    <title>Actor id 5 </title>
-</head>
-<body>
-    <a href="listado.pl">retroceder</a>
-HTML
 
 my $q=CGI->new;
 print $q -> header('text/xml');
